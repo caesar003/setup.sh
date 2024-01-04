@@ -10,7 +10,7 @@ git config --global user.email "caesarmuksid@gmail.com"
 # Install additional packages
 sudo apt install -y ripgrep nodejs python3 tmux kitty
 # Update package list and install essential build tools
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential gettext
 
 
