@@ -15,7 +15,7 @@ sudo apt install -y build-essential gettext
 
 
 # Checkout to branch 0.9.5
-git checkout tags/v0.9.5
+git checkout v0.9.5
 
 # Install dependencies for building neovim
 sudo apt install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
@@ -37,10 +37,10 @@ mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
 
 # Clone neovim from its official repository
-git clone https://github.com/neovim/neovim.git
+git clone https://github.com/neovim/neovim.git ~/neovim
 
 # Navigate into the neovim directory
-cd neovim
+cd ~/neovim
 
 make CMAKE_BUILD_TYPE=Release
 sudo make install
