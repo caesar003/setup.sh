@@ -2,7 +2,11 @@
 
 # Install Git, curl, and moc
 sudo apt update
-sudo apt install -y git curl moc
+sudo apt install -y git curl moc gh
+
+git config --global user.name "caesar003"
+git config --global user.email "caesarmuksid@gmail.com"
+
 # Install additional packages
 sudo apt install -y ripgrep nodejs python tmux kitty
 # Update package list and install essential build tools
