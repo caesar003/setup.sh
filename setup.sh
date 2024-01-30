@@ -13,15 +13,8 @@ sudo apt install -y ripgrep nodejs python3 tmux kitty
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential gettext
 
-
-# Checkout to branch 0.9.5
-git checkout v0.9.5
-
 # Install dependencies for building neovim
 sudo apt install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
-
-# Build and install neovim
-
 
 # Clone tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -42,6 +35,10 @@ git clone https://github.com/neovim/neovim.git ~/neovim
 # Navigate into the neovim directory
 cd ~/neovim
 
+# Checkout to branch 0.9.5
+git checkout v0.9.5
+
+# Build and install neovim
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 
