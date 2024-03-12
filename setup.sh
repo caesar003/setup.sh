@@ -16,7 +16,7 @@ git config --global user.name "caesar003"
 git config --global user.email "caesarmuksid@gmail.com"
 
 # Install additional packages
-sudo apt install -y ripgrep  python3 tmux kitty build-essential gettext
+sudo apt install -y ripgrep  python3 tmux kitty build-essential gettext xclip
 # Update package list and install essential build tools
 
 sudo apt-get build-dep vim
