@@ -54,7 +54,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/caesar003/tmux-config.git ~/.config/tmux
 
 # Clone neovim configurations
- git clone --depth 1 clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
  git clone https://github.com/caesar003/astro-nvim-config ~/.config/nvim/lua/user
 git clone https://github.com/caesar003/kitty.conf.git ~/.config/kitty
 git clone https://github.com/caesar003/vimrc ~/.vim/init
