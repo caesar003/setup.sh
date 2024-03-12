@@ -51,6 +51,9 @@ sudo apt install -y libtool libtool-bin autoconf automake cmake g++ pkg-config u
 
 mkdir -p ~/.vim/init
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Clone tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/caesar003/tmux-config.git ~/.config/tmux
@@ -60,6 +63,8 @@ git clone https://github.com/caesar003/tmux-config.git ~/.config/tmux
  git clone https://github.com/caesar003/astro-nvim-config ~/.config/nvim/lua/user
 git clone https://github.com/caesar003/kitty.conf.git ~/.config/kitty
 git clone https://github.com/caesar003/vimrc ~/.vim/init
+
+ln -s ~/.vim/init/init.vimrc ~/.vimrc 
 
 # Install Nerd Font
 mkdir -p ~/.local/share/fonts
