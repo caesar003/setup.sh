@@ -2,13 +2,20 @@
 
 # Install Git, curl, and moc
 sudo apt update
+
+sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update && sudo apt-get install nodejs -y
+
 sudo apt install -y git curl moc gh
 
 git config --global user.name "caesar003"
 git config --global user.email "caesarmuksid@gmail.com"
 
 # Install additional packages
-sudo apt install -y ripgrep nodejs python3 tmux kitty
+sudo apt install -y ripgrep  python3 tmux kitty
 # Update package list and install essential build tools
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential gettext
