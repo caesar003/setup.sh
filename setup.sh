@@ -21,7 +21,7 @@ sudo apt install -y ripgrep  python3 tmux kitty build-essential gettext xclip py
 
 sudo pip3 install pynvim --break-system-packages
 
-sudo npm install -g neovim
+sudo npm install -g neovim tree-sitter tree-sitter-cli
 
 cd ~
 # lazygit
