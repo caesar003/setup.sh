@@ -50,7 +50,7 @@ curl -LO https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0
 sudo dpkg -i bottom_0.9.6_amd64.deb
 rm bottom*.deb
 
-sudo apt-get build-dep vim
+sudo apt-get build-dep vim -y
 
 # Install dependencies for building neovim
 sudo apt install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
@@ -75,6 +75,7 @@ ln -s ~/.vim/init/init.vimrc ~/.vimrc
 # Install Nerd Font
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
+cd
 
 # Clone neovim from its official repository
 git clone https://github.com/neovim/neovim.git ~/neovim-repo
