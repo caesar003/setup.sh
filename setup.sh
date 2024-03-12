@@ -58,10 +58,18 @@ git clone https://github.com/vim/vim ~/vim-repo
 
 cd ~/vim-repo
 
-./configure --with-features=huge --enable-multibyte --enable-rubyinterp \
-  --enable-python3interp --with-python-config-dir=/usr/lib/python3.9/config-3.9-x86_64-linux-gnu \
-  --enable-perlinterp --enable-luainterp --enable-gui=gtk2 --enable-cscope \
-  --prefix=/usr
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-rubyinterp \
+            --enable-python3interp \
+            --with-python3-config-dir=/usr/lib/python3.11/config-3.11-x86_64-linux-gnu/ \
+            --enable-perlinterp \
+            --enable-luainterp \
+            --enable-cscope \
+            --enable-gtk2-check \
+            --with-x \
+            --with-compiledby="caesar003" \
+            --prefix=$PREFIX
 
 make VMRUNTIMEDIR=/usr/share/vim/vim9
 sudo make install
