@@ -11,6 +11,12 @@ sudo apt-get update && sudo apt-get install nodejs -y
 
 sudo apt install -y golang-go
 
+# install google-chrome browser
+cd 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb -y
+rm google-chrome*.deb
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git curl moc gh
 
