@@ -3,13 +3,16 @@
 # Install Git, curl, and moc
 sudo apt update
 
-sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-NODE_MAJOR=20
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-sudo apt-get update && sudo apt-get install nodejs -y
+# sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg
+# curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+# NODE_MAJOR=20
+# echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+# sudo apt-get update && sudo apt-get install nodejs -y
 
-sudo apt install -y golang-go
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install nodejs
+
+# sudo apt install -y golang-go
 
 # install google-chrome browser
 cd 
@@ -53,7 +56,7 @@ rm bottom*.deb
 sudo apt-get build-dep vim -y
 
 # Install dependencies for building neovim
-sudo apt install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+# sudo apt install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
 
 mkdir -p ~/.vim/init
 
@@ -87,9 +90,12 @@ cd ~/neovim-repo
 git checkout v0.9.5
 
 # Build and install neovim
-make CMAKE_BUILD_TYPE=Release
-sudo make install
+make CMAKE_BUILD_TYPE=RelWithDebInfo
 
+ cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+# sudo make install
+cd 
+rm -rfv ~/.neovim-repo
 
 git clone https://github.com/vim/vim ~/vim-repo
 
@@ -105,7 +111,7 @@ cd ~/vim-repo
             --enable-cscope \
             --enable-gtk2-check \
             --with-x \
-            --with-compiledby="caesar003" \
+            --with-compiledby="caesar003 - github.com/caesar003" \
             --prefix=$PREFIX
 
 make VMRUNTIMEDIR=/usr/share/vim/vim9
