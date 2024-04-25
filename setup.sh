@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Install Git, curl, and moc
+<<<<<<< HEAD
 sudo apt update
 
 # sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg
@@ -20,6 +21,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb -y
 rm google-chrome*.deb
 
+=======
+>>>>>>> 9f66aba (fix: updated readme.md)
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git curl moc gh
 
@@ -27,6 +30,7 @@ git config --global user.name "caesar003"
 git config --global user.email "caesarmuksid@gmail.com"
 
 # Install additional packages
+<<<<<<< HEAD
 sudo apt install -y ripgrep  python3 tmux kitty build-essential gettext xclip python3-pip
 # Update package list and install essential build tools
 
@@ -54,6 +58,12 @@ sudo dpkg -i bottom_0.9.6_amd64.deb
 rm bottom*.deb
 
 sudo apt-get build-dep vim -y
+=======
+sudo apt install -y ripgrep nodejs python3 tmux kitty build-essential gettext
+# Update package list and install essential build tools
+
+sudo apt-get build-dep vim
+>>>>>>> 9f66aba (fix: updated readme.md)
 
 # Install dependencies for building neovim
 # sudo apt install -y libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
@@ -63,17 +73,26 @@ mkdir -p ~/.vim/init
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+mkdir -p ~/.vim/init
+
 # Clone tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/caesar003/tmux-config.git ~/.config/tmux
 
 # Clone neovim configurations
+<<<<<<< HEAD
  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
  git clone https://github.com/caesar003/astro-nvim-config ~/.config/nvim/lua/user
 git clone https://github.com/caesar003/kitty.conf.git ~/.config/kitty
 git clone https://github.com/caesar003/vimrc ~/.vim/init
 
 ln -s ~/.vim/init/init.vimrc ~/.vimrc 
+=======
+# git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+# git clone https://github.com/caesar003/astro-nvim-config ~/.config/nvim/lua/user
+git clone https://github.com/caesar003/kitty.conf.git ~/.config/kitty
+git clone https://github.com/caesar003/vimrc ~/.vim/init
+>>>>>>> 9f66aba (fix: updated readme.md)
 
 # Install Nerd Font
 mkdir -p ~/.local/share/fonts
@@ -116,6 +135,14 @@ cd ~/vim-repo
 
 make VMRUNTIMEDIR=/usr/share/vim/vim9
 sudo make install
+
+
+git clone https://github.com/vim/vim ~/vim-repo
+
+cd ~/vim-repo
+
+./configure --with-features=huge --enable-python3interp --enable-perlinterp
+make && sudo make install
 
 echo "Installation completed successfully!"
 
