@@ -131,6 +131,7 @@ cd ~/vim-repo
             --enable-gtk2-check \
             --with-x \
             --with-compiledby="caesar003 - github.com/caesar003" \
+            --disable-gui \
             --prefix=$PREFIX
 
 make VMRUNTIMEDIR=/usr/share/vim/vim9
